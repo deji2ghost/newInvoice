@@ -4,11 +4,8 @@ import CustomButton from './components/ui/CustomButton'
 function App() {
 
   return (
-    <div className='bg-slate-500 flex flex-col items-center'>
-      ball
-      <CustomButton>
-        save Changes
-      </CustomButton>
+    <div className='bg-slate-50 flex flex-col items-center h-screen'>
+      <CustomButton text={'Generate Invoice'} />
     </div>
   )
 }
