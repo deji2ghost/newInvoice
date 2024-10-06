@@ -11,7 +11,7 @@ function Home() {
         <CustomButton width="w-[13%]" setClicked={setClicked} clicked={clicked} text={'Generate Invoice'} />
       </div>
 
-      {clicked ? <CustomModal openModal={clicked} /> : null}
+      <CustomModal maxWidth="max-w-[80%]" content='This is a modal Content' openModal={clicked} />
     </div>
   )
 }
