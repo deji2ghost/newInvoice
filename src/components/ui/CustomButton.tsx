@@ -5,11 +5,10 @@ interface ButtonProps {
   text: string;
   setClicked?: React.Dispatch<React.SetStateAction<boolean>>
   clicked?: boolean
-  generate?: boolean
-  saveUpload?: boolean
+  width: string
 }
 
-const CustomButton = ({ text, setClicked, generate, clicked, saveUpload }: ButtonProps) => {
+const CustomButton = ({ text, setClicked, clicked, width }: ButtonProps) => {
 
   const handleAllClicked = () => {
     console.log("true")
@@ -19,12 +18,10 @@ const CustomButton = ({ text, setClicked, generate, clicked, saveUpload }: Butto
     }
   }
   const buttonClass =
-    "bg-orange-500 hover:bg-opacity-80 rounded-md text-white p-2 outline-none border-none shadow-md hover:translate-y-[1px] text-[#fff] flex items-center justify-center";
+    "bg-orange-500 hover:bg-opacity-80 rounded-md text-white p-1 outline-none border-none shadow-md hover:translate-y-[1px] text-[#fff]";
 
-  const isGenerate = generate ? "ml-[89%] w-[11%]" : " "
-  const isSaveUpload = saveUpload ? "w-[90px]" : " "
   return (
-    <Button className={`${buttonClass} ${isGenerate} ${isSaveUpload}`} onClick={handleAllClicked}>
+    <Button className={`${buttonClass} ${width}`} onClick={handleAllClicked}>
       {text ? text :
       <ThreeCircles
         visible={true}
