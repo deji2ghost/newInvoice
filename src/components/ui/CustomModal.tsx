@@ -21,7 +21,7 @@ const CustomModal = ({ openModal, content, maxWidth }: ModalProps) => {
           <h1>Modal</h1>
           <CustomButton text="&#10005;" width="" />
         </div>
-        <p className="mt-[60px]">{content}</p>
+        <div className="mt-[60px]">{content}</div>
 
         <div className="flex items-center justify-end gap-4">
           <CustomButton width="w-[20%]" setClicked={setClicked} clicked={clicked} text='Cancel' />
