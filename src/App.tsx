@@ -1,11 +1,11 @@
 import './App.css'
-import CustomButton from './components/ui/CustomButton'
+import Home from './pages/Home'
 
 function App() {
 
   return (
-    <div className='bg-slate-50 flex flex-col items-center h-screen'>
-      <CustomButton text={'Generate Invoice'} />
+    <div className='bg-slate-50 h-screen'>
+      <Home />
     </div>
   )
 }
