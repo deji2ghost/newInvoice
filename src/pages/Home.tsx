@@ -6,7 +6,7 @@ function Home() {
   const [ clicked, setClicked ] = useState(false)
 
   return (
-    <div className='text-white min-h-screen overflow-hidden px-5'>
+    <div className='text-white overflow-hidden'>
       <div className='w-full mt-2'>
         <CustomButton width="w-[13%]" setClicked={setClicked} clicked={clicked} text={'Generate Invoice'} />
       </div>
