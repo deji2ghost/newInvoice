@@ -1,3 +1,4 @@
+import { Input } from "@headlessui/react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 interface Form {
@@ -32,7 +33,7 @@ const CustomInput = ({
     <div className="text-DarkGrey flex flex-col">
       <label className="text-[12px] font-[400] leading-[18px]">{label}</label>
       <div className={`relative ${width} rounded-[8px]`}>
-        <input
+        <Input
           className="py-3 w-full px-4 border-2 border-veryLightGray font-[400] rounded-[8px] text-[16px] outline-none focus:border-Purple focus:shadow-2xl"
           type={type}
           placeholder={placeholder}
