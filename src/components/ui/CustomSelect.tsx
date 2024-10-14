@@ -1,34 +1,18 @@
-import { useState } from "react";
-import Select, { ActionMeta, SingleValue } from "react-select";
-
-// const options = [
-//     { value: 'chocolate', label: 'Chocolate' },
-//     { value: 'strawberry', label: 'Strawberry' },
-//     { value: 'vanilla', label: 'Vanilla' },
-// ];
-
-interface OptionProps {
-  value: string;
-  label: string;
-}
+import { ActionMeta, SingleValue } from "react-select";
+import { OptionProps } from "../../App";
+import Select from "react-select";
 
 interface CustomSelect {
   options: OptionProps[];
-  width: string
-}
-
-const CustomSelect = ({ options, width }: CustomSelect) => {
-  const [selectedOption, setSelectedOption] =
-    useState<SingleValue<OptionProps>>(null);
-
-  const handleChange = (
+  width: string;
+  handleChange: (
     newValue: SingleValue<OptionProps>,
     actionMeta: ActionMeta<OptionProps>
-  ) => {
-    console.log("handleChange", newValue, actionMeta);
-    setSelectedOption(newValue);
-  };
+  ) => void;
+  selectedOption: SingleValue<OptionProps>;
+}
 
+const CustomSelect = ({ options, width, handleChange, selectedOption }: CustomSelect) => {
   return (
     <div className={`${width}`}>
       <Select
