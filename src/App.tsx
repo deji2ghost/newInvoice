@@ -39,7 +39,9 @@ function App() {
         options={options}
         width="w-[13%]"
       />
-      <CustomButton text="Button" width="" />
+      <CustomButton>
+        load
+      </CustomButton>
     </div>
   );
 }
