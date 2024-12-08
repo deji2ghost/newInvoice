@@ -5,7 +5,7 @@ import CustomButton from "../components/ui/CustomButton";
 const LoginPage = () => {
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
-  const [showPassword, setShowPassword] = useState<boolean>(false);
+  // const [showPassword, setShowPassword] = useState<boolean>(false);
   const handleEmail = (e: React.ChangeEvent<HTMLInputElement>) => {
     setEmail(e.target.value);
   };
@@ -17,22 +17,18 @@ const LoginPage = () => {
       <CustomInput
         width="w-[13%]"
         type="text"
-        label="Email"
         placeholder="Write Your Email Here"
         value={email}
-        handleChange={handleEmail}
+        onChange={handleEmail}
       />
       <CustomInput
         width="w-[13%]"
-        type={showPassword ? "text" : "password"}
-        showPassword={showPassword}
-        setShowPassword={setShowPassword}
-        label="PassWord"
+        type={"password"}
         placeholder="Write Your PassWord Here"
         value={password}
-        handleChange={handlePassword}
+        onChange={handlePassword}
       />
-      <CustomButton text={"Login"} width={"w-[13%]"} />
+      <CustomButton children={"Login"} className={"w-[13%]"} />
     </div>
   );
 };

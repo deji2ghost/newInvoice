@@ -13,7 +13,7 @@ function Home() {
     <div className="text-white overflow-hidden">
       <div className="w-full mt-2">
         <CustomButton
-          className="w-[13%]"
+          className=""
           children={"Generate Invoice"}
           onClick={handleModal}
         />
