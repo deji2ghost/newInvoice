@@ -10,12 +10,14 @@ import {
 } from "react-router-dom";
 import Main from "./layout/main";
 import Invoice from "./pages/Invoice/invoice";
+import CreateAccount from "./pages/createAccount/createAccount";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <>
       <Route path="/" element={<Navigate to="/login" />} />
       <Route index path="login" element={<LoginPage />} />
+      <Route index path="createAccount" element={<CreateAccount />} />
 
       <Route element={<Main />}>
         <Route path="home" element={<Home />} />
