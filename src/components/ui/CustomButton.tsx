@@ -10,23 +10,16 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        default: "bg-orange-500 hover:bg-opacity-80 rounded-md text-white p-1 outline-none border-none shadow-md hover:translate-y-[1px] text-[#fff]",
-        headless: "rounded bg-sky-600 py-2 px-4 text-sm text-white data-[hover]:bg-sky-500 data-[hover]:data-[active]:bg-sky-700",
-        destructive:
-          "bg-destructive text-destructive-foreground hover:bg-destructive/90",
-        outline:
-          "border border-input bg-background hover:bg-accent hover:text-accent-foreground",
-        secondary:
-          "bg-secondary text-secondary-foreground hover:bg-secondary/80",
+        default: "bg-purpleFragments-#633CFF text-[16px] lg:hover:bg-opacity-80 rounded-md text-white p-1 outline-none border-none shadow-md lg:hover:translate-y-[1px] text-[#fff]",
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
-        solid: "bg-oliveBlue-400 text-customWhite-100 border-none outline-none text-[16px] rounded-[8px] py-2 px-5 hover:bg-opacity-80",
-        transparent: "bg-transparent text-destructive-foreground border border-oliveBlue-500 text-oliveBlue-400 text-[16px] rounded-[8px] py-2 px-5 hover:bg-opacity-80",
+        solid: "bg-oliveBlue-400 text-customWhite-100 border-none outline-none text-[16px] rounded-[8px] hover:bg-opacity-80",
+        transparent: "bg-transparent text-destructive-foreground border border-oliveBlue-500 text-oliveBlue-400 text-[16px] rounded-[8px] hover:bg-opacity-80",
       },
       size: {
         default: "h-10 px-4 py-2",
         sm: "h-9 rounded-md px-3",
-        lg: "h-11 rounded-md px-8",
+        lg: "h-11 rounded-lg py-[11px] px-[27px]",
         icon: "h-10 w-10",
       },
     },
