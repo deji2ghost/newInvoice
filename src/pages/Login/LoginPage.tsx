@@ -1,6 +1,6 @@
 import { useState } from "react";
-import CustomInput from "../components/ui/CustomInput";
-import CustomButton from "../components/ui/CustomButton";
+import CustomInput from "../../components/ui/customInput";
+import CustomButton from "../../components/ui/customButton";
 
 const LoginPage = () => {
   const [email, setEmail] = useState<string>("");

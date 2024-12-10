@@ -5,3 +5,9 @@ export interface CustomSelectProps{
     onChange: (event: React.ChangeEvent<HTMLSelectElement>) => void
     value: string
 }
+
+export interface customCheckBoxProps {
+    isChecked: boolean
+    setIsChecked: () => void
+    className: string
+}

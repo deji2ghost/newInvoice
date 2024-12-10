@@ -11,6 +11,7 @@ const buttonVariants = cva(
     variants: {
       variant: {
         default: "bg-orange-500 hover:bg-opacity-80 rounded-md text-white p-1 outline-none border-none shadow-md hover:translate-y-[1px] text-[#fff]",
+        headless: "rounded bg-sky-600 py-2 px-4 text-sm text-white data-[hover]:bg-sky-500 data-[hover]:data-[active]:bg-sky-700",
         destructive:
           "bg-destructive text-destructive-foreground hover:bg-destructive/90",
         outline:
