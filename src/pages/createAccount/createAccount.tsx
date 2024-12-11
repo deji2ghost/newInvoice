@@ -1,9 +1,9 @@
 import { useState } from "react";
-import FormHeader from "../../components/FormHeader/formHeader";
+import FormHeader from "../../components/layout/FormHeader/formHeader";
 import CustomButton from "../../components/ui/customButton";
 import CustomInput from "../../components/ui/customInput";
 import CustomLabel from "../../components/ui/customLabel";
-import FormFooter from "../../components/FormFooter/formFooter";
+import FormFooter from "../../components/layout/FormFooter/formFooter";
 
 const CreateAccount = () => {
   const [email, setEmail] = useState<string>("");

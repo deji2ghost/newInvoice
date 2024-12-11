@@ -2,8 +2,8 @@ import { useState } from "react";
 import CustomInput from "../../components/ui/customInput";
 import CustomButton from "../../components/ui/customButton";
 import CustomLabel from "../../components/ui/customLabel";
-import FormHeader from "../../components/FormHeader/formHeader";
-import FormFooter from "../../components/FormFooter/formFooter";
+import FormHeader from "../../components/layout/FormHeader/formHeader";
+import FormFooter from "../../components/layout/FormFooter/formFooter";
 
 const LoginPage = () => {
   const [email, setEmail] = useState<string>("");

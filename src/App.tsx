@@ -1,5 +1,4 @@
 import "./App.css";
-import Home from "./pages/Home/Home";
 import LoginPage from "./pages/Login/LoginPage";
 import {
   createBrowserRouter,
@@ -8,9 +7,13 @@ import {
   Route,
   RouterProvider,
 } from "react-router-dom";
-import Main from "./layout/main";
+import Main from "./components/layout/routeLayout/main";
 import Invoice from "./pages/Invoice/invoice";
 import CreateAccount from "./pages/createAccount/createAccount";
+import Settings from "./pages/settings/settings";
+import Todo from "./pages/todo/todo";
+import Stopwatch from "./pages/stopwatch/stopwatch";
+import Home from "./pages/Home/Home";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -22,6 +25,9 @@ const router = createBrowserRouter(
       <Route element={<Main />}>
         <Route path="home" element={<Home />} />
         <Route path="invoice" element={<Invoice />} />
+        <Route path="stopwatch" element={<Stopwatch />} />
+        <Route path="todo" element={<Todo />} />
+        <Route path="settings" element={<Settings />} />
       </Route>
     </>
   )
