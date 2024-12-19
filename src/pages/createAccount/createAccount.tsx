@@ -2,7 +2,6 @@ import { useState } from "react";
 import FormHeader from "../../components/layout/FormHeader/formHeader";
 import CustomButton from "../../components/ui/customButton";
 import CustomInput from "../../components/ui/customInput";
-import CustomLabel from "../../components/ui/customLabel";
 import FormFooter from "../../components/layout/FormFooter/formFooter";
 
 const CreateAccount = () => {
@@ -30,9 +29,10 @@ const CreateAccount = () => {
         />
         <div className="flex flex-col gap-6">
           <div className="flex flex-col gap-1">
-            <CustomLabel label="Email Address" />
             <CustomInput
               width="w-full"
+              id="email"
+              labelText="Email Address"
               type="text"
               placeholder="Write Your Email Here"
               value={email}
@@ -40,8 +40,9 @@ const CreateAccount = () => {
             />
           </div>
           <div className="flex flex-col gap-1">
-            <CustomLabel label="Create password" />
             <CustomInput
+            labelText="Create password"
+            id="create password"
               width="w-full"
               type={"password"}
               placeholder="Enter your password"
@@ -50,8 +51,9 @@ const CreateAccount = () => {
             />
           </div>
           <div className="flex flex-col gap-1">
-            <CustomLabel label="Confirm password" />
             <CustomInput
+            labelText="Create password"
+            id="create password"
               width="w-full"
               type={"password"}
               placeholder="Enter your password"
@@ -59,7 +61,16 @@ const CreateAccount = () => {
               onChange={handleConfirmPassword}
             />
           </div>
-          <CustomButton children="Login" size="lg" />
+          <div className="">
+            <CustomInput
+            labelText="Choose a file"
+            id="file"
+              width="w-full"
+              type={"file"}
+              placeholder="file"
+            />
+          </div>
+          <CustomButton children="Login" size="lg" className="w-full" />
           <FormFooter heading="Already have an account?" paragraph="Login" />
         </div>
       </div>

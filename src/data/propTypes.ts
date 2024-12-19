@@ -10,6 +10,7 @@ export interface customCheckBoxProps {
   isChecked: boolean;
   setIsChecked: () => void;
   className: string;
+  labelText?: string
 }
 
 export interface OptionProps {
@@ -19,4 +20,5 @@ export interface OptionProps {
 
 export interface labelProps {
     label: string
+    headless?: boolean
 }

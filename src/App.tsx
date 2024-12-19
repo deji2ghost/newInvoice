@@ -14,15 +14,38 @@ import Settings from "./pages/settings/settings";
 import Todo from "./pages/todo/todo";
 import Stopwatch from "./pages/stopwatch/stopwatch";
 import Home from "./pages/Home/Home";
+import { ErrorBoundary } from "./components/errorBoundary";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <>
       <Route path="/" element={<Navigate to="/login" />} />
-      <Route index path="login" element={<LoginPage />} />
-      <Route index path="createAccount" element={<CreateAccount />} />
+      <Route
+        index
+        path="login"
+        element={
+          <ErrorBoundary>
+            <LoginPage />
+          </ErrorBoundary>
+        }
+      />
+      <Route
+        index
+        path="createAccount"
+        element={
+          <ErrorBoundary>
+            <CreateAccount />
+          </ErrorBoundary>
+        }
+      />
 
-      <Route element={<Main />}>
+      <Route
+        element={
+          <ErrorBoundary>
+            <Main />
+          </ErrorBoundary>
+        }
+      >
         <Route path="home" element={<Home />} />
         <Route path="invoice" element={<Invoice />} />
         <Route path="stopwatch" element={<Stopwatch />} />

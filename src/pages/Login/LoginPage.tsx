@@ -1,14 +1,14 @@
 import { useState } from "react";
 import CustomInput from "../../components/ui/customInput";
 import CustomButton from "../../components/ui/customButton";
-import CustomLabel from "../../components/ui/customLabel";
 import FormHeader from "../../components/layout/FormHeader/formHeader";
 import FormFooter from "../../components/layout/FormFooter/formFooter";
 
 const LoginPage = () => {
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
-  // const [showPassword, setShowPassword] = useState<boolean>(false);
+
+  
   const handleEmail = (e: React.ChangeEvent<HTMLInputElement>) => {
     setEmail(e.target.value);
   };
@@ -23,18 +23,21 @@ const LoginPage = () => {
         <FormHeader heading="Login" paragraph="Add your details below to get back into the app" />
         <div className="flex flex-col gap-6">
           <div className="flex flex-col gap-1">
-            <CustomLabel label="Email Address" />
             <CustomInput
+            labelText="Email"
               width="w-full"
               type="text"
               placeholder="Write Your Email Here"
               value={email}
               onChange={handleEmail}
+              id="email"
             />
           </div>
           <div className="flex flex-col gap-1">
-            <CustomLabel label="Password" />
             <CustomInput
+              labelText="Password"
+              id="password"
+              showPassword
               width="w-full"
               type={"password"}
               placeholder="Enter your password"

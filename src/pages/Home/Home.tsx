@@ -4,10 +4,17 @@ import CustomModal from "../../components/ui/customModal";
 import CustomSelect from "../../components/ui/customSelect";
 import { ColourOption, colourOptions } from "../../data/data";
 import CustomCheckbox from "../../components/ui/customCheckbox";
+import { DatePickerWithRange } from "@/components/layout/datePicker/datePicker";
+import CustomTab from "@/components/layout/customTabs/customTab";
 
 function Home() {
   const [clicked, setClicked] = useState(false);
   const [checked, setChecked] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
+
+    const toggleDropdown = () => {
+      setIsOpen(!isOpen);
+    };
 
   const handleModal = () => {
     setClicked(true);
@@ -30,20 +37,34 @@ function Home() {
   return (
     <div className="text-white overflow-hidden min-h-screen">
       <div className="w-full mt-2">
-        <CustomButton
-          className=""
-          children={"Generate Invoice"}
-          onClick={handleModal}
-        />
+        <div className="flex flex-col items-center gap-6">
+          <CustomButton
+            className=""
+            children={"Generate Invoice"}
+            onClick={handleModal}
+            loading={false}
+          />
+          <CustomButton
+            className=""
+            children={"Handle Dropdown"}
+            onClick={toggleDropdown}
+            dropDown={isOpen}
+            menuItems={["blood", "wind", "rema"]}
+          />
+          <DatePickerWithRange />
+        </div>
         <CustomCheckbox
           className=""
           isChecked={checked}
           setIsChecked={()=> setChecked(!checked)}
+          labelText="click here to tick box"
         />
       </div>
         <CustomSelect 
           arrayOptions={promiseOptions}
         />
+        
+        <CustomTab headerTwo="header 2" headerOne="header 1" bodyOne={"this is the first body"} bodyTwo={"this is the second body"}/>
 
       <CustomModal
         title="This is a pop up modal"

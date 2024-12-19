@@ -12,4 +12,4 @@ const CustomSelect = ({ arrayOptions }: promiseOptionsProps) => {
   );
 };
 
-export default CustomSelect;
+export default CustomSelect; 
