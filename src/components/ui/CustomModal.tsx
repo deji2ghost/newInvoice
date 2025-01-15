@@ -1,34 +1,36 @@
-import { useState } from "react";
-import CustomButton from "./CustomButton";
+import {
+  Dialog,
+  DialogBackdrop,
+  DialogPanel,
+  DialogTitle,
+} from "@headlessui/react";
+import { cn } from "../../lib/utils";
 
 interface ModalProps {
   openModal: boolean;
-  content: string | JSX.Element
-  maxWidth: string
+  closeModal: () => void;
+  footer: JSX.Element;
+  content: JSX.Element;
+  className: string;
+  title: string;
 }
 
-const CustomModal = ({ openModal, content, maxWidth }: ModalProps) => {
-  const [ clicked, setClicked ] = useState(false)
-
+const CustomModal = ({ openModal, closeModal, footer, content, title, className }: ModalProps) => {
   return (
-    <div
-      className={`${
-        openModal ? "block" : "hidden"
-      } " fixed top-0 left-0 h-screen w-full bg-slate-800 bg-opacity-60 "`}
+    <Dialog
+      open={openModal}
+      onClose={closeModal}
+      className="relative z-50"
     >
-      <div className={`relative ${maxWidth} mx-auto bg-slate-50 text-black p-5 rounded-md h-[400px] top-1/2 -translate-y-1/2 flex flex-col justify-between`}>
-        <div className="absolute top-0 left-0 px-4 py-2 w-full flex items-center justify-between drop-shadow-md bg-slate-100">
-          <h1>Modal</h1>
-          <CustomButton text="&#10005;" width="" />
-        </div>
-        <div className="mt-[60px]">{content}</div>
-
-        <div className="flex items-center justify-end gap-4">
-          <CustomButton width="w-[20%]" setClicked={setClicked} clicked={clicked} text='Cancel' />
-          <CustomButton width="w-[20%]" setClicked={setClicked} clicked={clicked} text={'Save'} />
-        </div>
+      <DialogBackdrop className="fixed inset-0 bg-black/30"/>
+      <div className="fixed inset-0 flex w-screen items-center justify-center p-4">
+        <DialogPanel className={cn("max-w-lg space-y-4 border bg-white p-12", className)}>
+          <DialogTitle className="font-bold">{ title }</DialogTitle>
+          { content }
+          { footer }
+        </DialogPanel>
       </div>
-    </div>
+    </Dialog>
   );
 };
 
